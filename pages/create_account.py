@@ -16,7 +16,6 @@ class CreateAccountPage:
         MrsRadioBtn_status = MrsRadioBtn.is_selected()
         if not MrsRadioBtn_status:
             MrsRadioBtn.click()
-
         time.sleep(2)
 
         firstname_field = self.driver.find_element(By.ID, 'customer_firstname')

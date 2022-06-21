@@ -7,6 +7,7 @@ import time
 import pytest
 from pages.create_account import CreateAccountPage
 from pages.front_page import Front
+from pages.signupPage import SignUp
 
 
 class CreateAccountTest(unittest.TestCase):
@@ -19,7 +20,10 @@ class CreateAccountTest(unittest.TestCase):
         time.sleep(3)
 
         fp = Front(driver)
-        fp.front_page("hasansadia940@gmail.com")
+        fp.front_page()
+
+        sp = SignUp(driver)
+        sp.signup_page("hasansadia240@gmail.com")
 
         cp = CreateAccountPage(driver)
         cp.create_account("Sadia", "Hasan", "123456", "abcd", "cantonment", "Dhaka", "12345",

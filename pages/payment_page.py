@@ -33,6 +33,15 @@ class PaymentPage:
         self.driver.implicitly_wait(3)
         pay_by_check.click()
 
+        message = self.driver.find_element(By.XPATH, '//*[@id="center_column"]/form/div/h3')
+        time.sleep(2)
+
+        display = message.is_displayed()
+        if display is True:
+            print('checkout successfully')
+        else:
+            print('failed')
+
         confirm = self.driver.find_element(By.XPATH, '//*[@id="cart_navigation"]/button')
         self.driver.implicitly_wait(3)
         confirm.click()
